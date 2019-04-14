@@ -1,36 +1,56 @@
-기본 문법 이해 
-Ext로 시작, Ext.JS가 정의된 기능을 이용하기 위해서는.
-탭/패널/차트 등을 구현한다.  tml 스크립트를 직접 편집하지 않고.  
+EXTJS: 
+Ext._______  명령어가 코드에 보입니다. 
+Ext.JS에서 지원하는 기능을 사용하고 있다는 뜻입니다. 
+EXTJS가 하는 일:? 웹 사이트에 쓰이는 UI를 구현합니다  (버튼/팝업/그래프)  
+html 스크립트를 직접 편집하는 것보다 간단한다는 장점이 있습니다. 
 
 
-위젯: 화면을 구성하는 요소들
-컨테이너: 추가되는 위젯을 받을 상위 위젯. 도화지. 
-컴포넌트 : 화면에 나타나는 모든 위젯 - 다른 위젯을 받을 수 없음. 
+'위젯': 
+'화면을 구성하는 요소'들을 위젯이라고 부릅니다.
+위젯의 종류는 크게 두가지로 나뉩니다.  
+컨테이너 : 추가되는 위젯을 받을 수 있는 위젯. 
+컴포넌트 : 다른 위젯을 받을 수 없는, 다른 모든 위젯
+EXT.JS 코드는 '컨테이너' 안에 '컴퍼넌트'가 들어가 있는 
+('패널' 위젯에 '그래프' 위젯이 들어가 있는 스크린샷.) 여기서 '패널'은 컨테이너고, '그래프'는 컨테이너에 들어있는 한 컴퍼넌트가 되겠죠. 도화지(컨테이너)에 그림(컴퍼넌트)을 그린다고 생각하면 됩니다. 
+컨테이너 안에 컨테이너가 들어가는 것도 물론 가능합니다. 
 
 
-1 컨테이너 생성.  (패널, 뷰포트, 탭 등) 
-생성 방식 1 Ext.Create ex) Ext.Create('Ext.panel.Panel') -> 괄호 안 클래스 이름 입력
+EXTJS는 다음과 같은 순서로 읽으면 됩니다 
+
+
+0 
+스토어 생성 등이 있습니다. 
+
+
+1 컨테이너 위젯 생성.  (Panel, Viewport, Tab 등) 
+생성 방식: 
+1 Ext.Create
+ex) Ext.Create('Ext.panel.Panel') -> 괄호 안 클래스 이름 입력
 * alert, confirm 등 create를 거치지 않고 생성되는 컴포넌트도 있다. 
-Ext.Define
-'OnReady' - 화면이 로딩 되는 순간 발동 
+2 Ext.Define
 
 
-2 Item에 콤포넌트 추가.
+가장 기본이 되는 컨테이너 뒤에는 .OnReady가 붙어 있습니다. 
+.OnReady의 뜻 - 화면이 불러오지는 순간 발동한다는 뜻입니다. 
+
+
+2 컨테이너 위젯의  Item : 에 다른 위젯을 추가
 2-1 items: 배열 안에 xtype(약칭)으로 추가
     ex)  Ext.Create('Ext.panel.Panel', { items : { xtype: 'button', text: '확인'}})
 2-2 add 메소드   
     ex) tab.add( Ext.create('' , ));  
-  
-3 config (속성) 지정 
+
+
+3 위젯들의 속성 (config) 지정 
 key / value 형식을 지님.  (JSON 구조 따름) 
 특히 중요한 친구들 아래 모음
 3-1 store - 데이터를 저장하는 역할
 fields - key를 나타내주는 값. (DB에서 칼럼명이라고 생각하자. coulmn은 supr_nm, key는 애경식품) 
 3-2 style - css 적용
-3-3 renderTo - 원하는 위치에 표출시키기. 
+3-3 renderTo - 페이지의 어느 위치에 표기시킬지 정해줍니다. 코드 하단의 HTML 스크립트에 대응합니다. 
 
 
-4 event - rstener, handler
+4 event - listener, handler
 4-1 listener - component에 이벤트를 적용할 때 씀. 특정 이벤트가 발생할 경우, listner 발동 - 안에 있는 함수 동작
 ex) 클릭 시 '다음 펑션을 수행' - click: function()
 jsonAraay 형태로 선언. [{event 1: function()}, {event 2: function()},{event 3: function()}]
@@ -47,6 +67,3 @@ jsonAraay 형태로 선언. [{event 1: function()}, {event 2: function()},{event
 사용례: 천 단위마다 콤마 찍기 
 리턴을 줘야 한다. 출력 안 된다 없을 시. 
 docs 들어가서 - (콤포넌트).renderer 검색 -> 패러미터에 대한 설명 나옴
-
-
-6. 쿼리 - 안 씀. 있다는 것만 알아두면 된다
