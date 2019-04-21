@@ -23,9 +23,9 @@ EXTJS를 이용해 구현된 UI 요소들을 위젯이라고 부릅니다. (ex, 
 
 EXT.JS 코드는 '컨테이너' 안에 '컴퍼넌트'가 들어가 있는 형태로 구현됩니다. 
 
+![image](https://user-images.githubusercontent.com/49356933/56466202-e130b780-6448-11e9-908a-2280e7fd9f2a.png)
 
-
-(그림 1. 회원가입 창) 
+(그림 1. Sencha Kitchen Sink에 제시된 회원가입 창 ) 
 
 컨테이너 위젯 안에 컴퍼넌트가 구현 된 예시 화면입니다. 
 
