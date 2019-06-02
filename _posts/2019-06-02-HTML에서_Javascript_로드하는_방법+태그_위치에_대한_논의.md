@@ -43,7 +43,8 @@ JavaScript로 웹페이지를 제어하기 위해서는 JavaScript를 로드해�
 
 # <script> 태그 위치에 대한 댓글 논의
 ------------------------------ 
-
+ 
+ 일반적으로 이렇게 한다고 합니다: 
 >1. Place library script such as the jQuery library in the head section.
 >라이브러리 스크립트는 헤더에
 >2. Place normal script in the head unless it becomes a performance/page load issue.
