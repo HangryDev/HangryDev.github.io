@@ -41,8 +41,8 @@ JavaScript로 웹페이지를 제어하기 위해서는 JavaScript를 로드해�
     <script type="text/javascript" src="script2.js"></script>  
 
 
-<script> 태그 위치에 대한 댓글 논의
----------------------------
+#<script> 태그 위치에 대한 댓글 논의
+------------------------------ 
 
 >1. Place library script such as the jQuery library in the head section.
 >라이브러리 스크립트는 헤더에
